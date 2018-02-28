@@ -1,13 +1,8 @@
 #include <iostream>
+#include "Doctor.h"
 
-
-int main()
+Doctor::VisitDate()
 {
-    
-    DoctorOffice do; // Object creation will call the constructor
-    int date,month,year;
-    string time;
-    
     cout << "The available time of doctor are:\n";
     do.showAvailTimes(); // This will print all available time
     
@@ -19,8 +14,11 @@ int main()
     cin  >> date;
     cout << "\nEnter the time you wish to visit the doctor in hr:";
     cin >> time;
+}
     
-    bool docOpen = do.open(year,month,date); 
+Doctor::DoctorAvailable()
+{
+    docOpen = do.open(year,month,date); 
     //docOpen will contain true if it is a week day and false for a weekend
     
     if(docOpen) // date entered is weekday
@@ -39,5 +37,4 @@ int main()
     {
         cout << "Doctor isn't available on weekends\n";
     }
-    return 0;
 }
