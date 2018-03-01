@@ -93,6 +93,23 @@ void DoctorOffice::setAvailTimes(int month, int day, int year, string apptTime){
     }                 
 }
 
+void DoctorOffice::editAppt(int month, int day, int year, string apptTime){
+    int count = 0;
+    while (count < 9){
+        if(openHours[count] != apptTime)
+            count++;
+        else
+            break;
+    }
+    if(openHours[count] == apptTime){
+        if(free[day-1][count] == false){
+            free[day-1][count] = true;
+            cout << "Removed patient appointment and slot open for: " << months[month-1] << " " << day << ", " << year << " at " << apptTime << "." << endl << endl;
+        }else
+            cout << "Slot is still available for: " << months[month-1] << " " << day << ", " << year << " at " << apptTime << "." << endl << endl;
+    }                 
+}
+
 void DoctorOffice::print(int size){
     for(int i = 0; i < size; i++){
         for(int j = 0; j < 9; j++){
