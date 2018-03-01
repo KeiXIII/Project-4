@@ -41,6 +41,9 @@ int main(){
     //tests to see if appt actually exists; should output that spot is taken
     March.setAvailTimes(3, 2, 2018, "10am");
     
+    //removes appt
+    March.editAppt(3, 2, 2018, "10am");
+    
     March.setAvailTimes(3, 2, 2018, "1pm");
     avail = March.showAvailTimes(2);
     cout << "There are " << avail << " spots left." << endl << endl;
@@ -50,3 +53,4 @@ int main(){
     
     return 0;
 }
+
