@@ -17,9 +17,9 @@ public:
     ~DoctorOffice();
     bool open(int year, int month, int day);
     int showAvailTimes(int day);
-    void setAvailTimes(int month, int day, int year, string apptTime);   
+    void setAvailTimes(int month, int day, int year, string apptTime); 
+    void editAppt(int month, int day, int year, string apptTime);
     void print(int size);
 };
 
 #endif /* DOCTOROFFICE_H */
-
